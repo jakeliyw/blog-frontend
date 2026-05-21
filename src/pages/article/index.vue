@@ -4,7 +4,7 @@
       <v-hover v-slot:default="{ hover }" open-delay="200" v-for="item of articleList" :key="item.id">
         <v-card subtitle :elevation="hover ? 16 : 2" class="mx-auto card" @click="datail(item)">
           <div class="article-img" :style="{backgroundColor: bgStyle}">
-            <img
+            <v-img
               :src="item.cover"
               style="border-radius: 0.5rem; width: 32rem;  height: 100%;"
             />
