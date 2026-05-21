@@ -5,7 +5,7 @@
         <v-card subtitle :elevation="hover ? 16 : 2" class="mx-auto card" @click="datail(item)">
           <div class="article-img" :style="{backgroundColor: bgStyle}">
             <v-img
-              :src="item.cover.replace('http://43.136.115.90:9000', '')"
+              :src="item.cover"
               style="border-radius: 0.5rem; width: 32rem;  height: 100%;"
             />
           </div>
@@ -105,6 +105,7 @@ export default {
           const next = { ...item };
           next.tag = (next.tag || "").split(",");
           next.blogPost = removeMarkdown(next.blogPost || "");
+          next.cover = next.cover?.replace('http://43.136.115.90:9000', '');
           return next;
         });
         this.page.total = data?.total || rawList.length || 0;
