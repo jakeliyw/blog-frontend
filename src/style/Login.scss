@@ -1,0 +1,78 @@
+@mixin login() {
+  @media screen and (min-width: 904px) {
+    .content {
+      height: 100vh;
+      background-color: rgba(246, 247, 251);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login {
+      width: 40vh;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .verification {
+        width: 40vh;
+        height: 40vh;
+        padding: 2vh;
+
+        .login-page {
+          width: 36vh;
+          margin-top: 3vh;
+          color: white;
+        }
+      }
+    }
+
+
+    .frame {
+      width: 100vh;
+      height: 60vh;
+      background-color: white;
+      border-radius: 2vh;
+      box-shadow: 0 4px 23px 0 rgba(0, 0, 0, .09);
+      display: flex;
+      justify-content: space-between;
+
+      .img-range {
+        width: 60vh;
+        height: 60vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 60vh;
+          height: 50vh;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 903px) {
+
+    img {
+      display: none;
+    }
+    .content {
+      height: 100vh;
+      padding: 2vw;
+      display: flex;
+      align-items: center;
+    }
+    .article{
+      margin: 0;
+      padding: 0;
+    }
+    .login-page{
+      width: 93vw;
+      color: white;
+    }
+    .verification{
+      height: 50vh;
+    }
+  }
+}

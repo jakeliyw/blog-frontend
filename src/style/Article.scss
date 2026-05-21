@@ -1,0 +1,55 @@
+@mixin Article () {
+  .article-container {
+    padding: 0 1.2rem 1.2rem 1.2rem;
+  }
+
+  .container--fluid {
+    max-width: 100%;
+  }
+
+
+  .meta-box {
+    font-size: 1.4rem;
+    color: #607d8b;
+    padding: 0 10px;
+    display: flex;
+    align-content: center;
+
+    .date {
+      display: flex;
+      align-items: center;
+      margin-right: 1.2rem;
+
+      .con-yanjing {
+        margin-right: .4rem;
+      }
+    }
+
+    .author {
+      @extend .date;
+
+      .con-yanjing {
+        margin-right: .4rem;
+      }
+    }
+
+    .watch {
+      @extend .author;
+
+      .con-yanjing {
+        font-size: 1.2rem;
+        margin-right: .4rem;
+      }
+    }
+  }
+
+  .content {
+    padding: 0 1rem;
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+  }
+
+  .pagination {
+    margin-top: 3rem;
+  }
+}
