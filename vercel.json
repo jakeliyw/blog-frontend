@@ -1,12 +1,12 @@
 {
     "rewrites": [
         {
-            "source": "/prod-api/(.*)",
-            "destination": "https://nest-blog-eight.vercel.app/prod-api/$1"
-        },
-        {
             "source": "/blog-images/(.*)",
             "destination": "http://43.136.115.90:9000/blog-images/$1"
+        },
+        {
+            "source": "/prod-api/(.*)",
+            "destination": "https://nest-blog-eight.vercel.app/prod-api/$1"
         },
         {
             "source": "/(.*)",
