@@ -105,7 +105,7 @@ export default {
           const next = { ...item };
           next.tag = (next.tag || "").split(",");
           next.blogPost = removeMarkdown(next.blogPost || "");
-          next.cover = next.cover.replace('http://43.136.115.90:9000', '');
+          next.cover = next.cover.replace(/^https?:\/\/[^/]+/, '');
           return next;
         });
         this.page.total = data?.total || rawList.length || 0;
