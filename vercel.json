@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+        {
+            "source": "/prod-api/(.*)",
+            "destination": "https://nest-blog-eight.vercel.app/$1"
+        }
+    ]
+}
