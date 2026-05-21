@@ -3,6 +3,10 @@
         {
             "source": "/prod-api/(.*)",
             "destination": "https://nest-blog-eight.vercel.app/prod-api/$1"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
         }
     ]
 }
