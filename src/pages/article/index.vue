@@ -105,6 +105,7 @@ export default {
           const next = { ...item };
           next.tag = (next.tag || "").split(",");
           next.blogPost = removeMarkdown(next.blogPost || "");
+          next.cover = next.cover.replace(/^https?:\/\/[^/]+/, '');
           return next;
         });
         this.page.total = data?.total || rawList.length || 0;
