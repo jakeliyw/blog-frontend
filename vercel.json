@@ -1,8 +1,8 @@
 {
     "rewrites": [
         {
-            "source": "/blog-images/(.*)",
-            "destination": "http://43.136.115.90:9000/blog-images/$1"
+            "source": "/blog-images/:path*",
+            "destination": "http://43.136.115.90:9000/blog-images/:path*"
         },
         {
             "source": "/prod-api/(.*)",
