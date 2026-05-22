@@ -21,7 +21,7 @@
       </div>
     </v-card>
     <v-pagination
-      v-show="page.total > 1"
+      v-if="pageCount > 0"
       v-model="page.current"
       :length="pageCount"
       class="pagination"

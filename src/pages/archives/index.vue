@@ -24,6 +24,7 @@
       </v-timeline>
     </div>
     <v-pagination
+      v-if="pageCount > 0"
       v-model="page.current"
       :length="pageCount"
       class="pagination"
