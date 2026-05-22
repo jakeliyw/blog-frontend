@@ -5,7 +5,7 @@
       <v-app-bar app color="teal" dark>
 
         <!-- 网站标题 -->
-        <v-toolbar-title @click="home" style="cursor:pointer; font-size: 1.4rem;font-family: 'Georgia', serif;">LYW1</v-toolbar-title>
+        <v-toolbar-title @click="home" style="cursor:pointer; font-size: 1.4rem;font-family: 'Georgia', serif;">LYW</v-toolbar-title>
 
         <v-spacer></v-spacer>
 
