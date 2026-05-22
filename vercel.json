@@ -2,7 +2,7 @@
     "rewrites": [
         {
             "source": "/blog-images/:path*",
-            "destination": "http://43.136.115.90:9000/blog-images/:path*"
+            "destination": "/api/proxy?path=:path*"
         },
         {
             "source": "/prod-api/:path*",
