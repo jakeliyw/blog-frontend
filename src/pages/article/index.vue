@@ -28,7 +28,7 @@
       </v-hover>
       <div class="text-center">
         <v-pagination
-          v-if="pageCount > 1"
+          v-if="!pageCount"
           v-model="page.current"
           :length="pageCount"
           class="pagination"
