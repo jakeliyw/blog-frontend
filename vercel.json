@@ -5,12 +5,8 @@
             "destination": "http://43.136.115.90:9000/blog-images/:path*"
         },
         {
-            "source": "/prod-api/(.*)",
-            "destination": "https://nest-blog-eight.vercel.app/prod-api/$1"
-        },
-        {
-            "source": "/(.*)",
-            "destination": "/index.html"
+            "source": "/prod-api/:path*",
+            "destination": "https://nest-blog-eight.vercel.app/prod-api/:path*"
         }
     ]
 }
