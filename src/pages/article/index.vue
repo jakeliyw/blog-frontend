@@ -28,7 +28,7 @@
         </v-card>
       </v-hover>
       </div>
-    <v-card class="pa-4" v-else>
+    <v-card  v-else style="padding: 5rem 8rem;">
       <div class="d-flex">
         <v-skeleton-loader
           type="image"
@@ -209,7 +209,7 @@ export default {
 
 .card {
   margin-bottom: 2rem;
-  padding: 8rem 10rem;
+  padding: 5rem 8rem;
   display: flex;
   flex-direction: row;
   align-items: center;
