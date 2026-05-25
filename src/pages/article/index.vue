@@ -29,48 +29,54 @@
       </v-hover>
       </div>
       <div v-else >
+        <!-- 最简修复版 -->
         <v-card
           v-for="value in 2"
           :key="value"
-          class="mx-auto card skeleton-card"
+          class="mx-auto card"
           elevation="2"
+          style="padding: 16px;"
         >
-          <div class="d-flex align-start">
-            <!-- 图片区域 - 与实际卡片保持一致 -->
-            <div class="article-img-skeleton">
+          <div style="display: flex; gap: 16px; align-items: flex-start;">
+            <!-- 图片 -->
+            <div style="width: 32rem; height: 180px; flex-shrink: 0;">
               <v-skeleton-loader
                 type="image"
-                width="100%"
                 height="100%"
-                class="skeleton-image"
               />
             </div>
 
-            <!-- 文字区域 -->
-            <div class="skeleton-text-wrapper">
-              <!-- 标题 - 与实际卡片标题高度一致 -->
-              <v-skeleton-loader
-                type="heading"
-                class="skeleton-title"
-              />
-
-              <!-- 描述文字 - 两行 -->
-              <div class="skeleton-desc">
+            <!-- 文字 - 使用明确的宽度和高度 -->
+            <div style="flex: 1;">
+              <!-- 标题 -->
+              <div style="margin-bottom: 12px;">
                 <v-skeleton-loader
-                  type="text"
-                  class="skeleton-line-1"
-                />
-                <v-skeleton-loader
-                  type="text"
-                  class="skeleton-line-2"
+                  type="heading"
+                  width="70%"
                 />
               </div>
 
-              <!-- 日期 - 与实际卡片日期位置对齐 -->
-              <v-skeleton-loader
-                type="text"
-                class="skeleton-date"
-              />
+              <!-- 描述文字 -->
+              <div style="margin-bottom: 8px;">
+                <v-skeleton-loader
+                  type="text"
+                  width="100%"
+                />
+              </div>
+              <div style="margin-bottom: 12px;">
+                <v-skeleton-loader
+                  type="text"
+                  width="80%"
+                />
+              </div>
+
+              <!-- 日期 -->
+              <div>
+                <v-skeleton-loader
+                  type="text"
+                  width="40%"
+                />
+              </div>
             </div>
           </div>
         </v-card>
@@ -182,97 +188,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/* 骨架屏卡片样式 */
-.skeleton-card {
-  margin-bottom: 16px; /* 与下方卡片的间距 */
-  padding: 16px; /* 与实际卡片内边距对齐 */
-}
-
-/* 图片区域 - 与实际卡片的 article-img 保持一致 */
-.article-img-skeleton {
-  width: 32rem;
-  height: auto;
-  min-height: 180px;
-  flex-shrink: 0;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  margin-right: 16px;
-}
-
-.skeleton-image {
-  border-radius: 0.5rem;
-}
-
-/* 文字区域容器 */
-.skeleton-text-wrapper {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* 顶部对齐 */
-  gap: 12px; /* 各元素间距 */
-}
-
-/* 标题骨架屏 - 与实际 headline 高度对齐 */
-.skeleton-title {
-  width: 70%;
-  margin-bottom: 0;
-}
-
-.skeleton-title :deep(.v-skeleton-loader__heading) {
-  height: 28px; /* 与标题字体大小匹配 */
-  margin: 0;
-}
-
-/* 描述区域 */
-.skeleton-desc {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 100%;
-}
-
-/* 描述第一行 - 与实际 desc 文字高度一致 */
-.skeleton-line-1 {
-  width: 100%;
-}
-
-.skeleton-line-1 :deep(.v-skeleton-loader__text) {
-  height: 48px; /* 两行文字的高度 */
-  border-radius: 4px;
-}
-
-/* 描述第二行 */
-.skeleton-line-2 {
-  width: 80%;
-}
-
-.skeleton-line-2 :deep(.v-skeleton-loader__text) {
-  height: 20px;
-  border-radius: 4px;
-}
-
-/* 日期骨架屏 - 与实际 date 高度对齐 */
-.skeleton-date {
-  width: 40%;
-  margin-top: 4px;
-}
-
-.skeleton-date :deep(.v-skeleton-loader__text) {
-  height: 20px; /* 与日期文字高度一致 */
-  border-radius: 4px;
-}
-
-/* 确保顶部对齐 */
-.d-flex.align-start {
-  align-items: flex-start;
-}
-
-/* 响应式处理 - 如果屏幕较小时调整图片宽度 */
-@media (max-width: 960px) {
-  .article-img-skeleton {
-    width: 20rem;
-  }
-}
 
 
 // ---------------
