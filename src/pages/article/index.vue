@@ -28,35 +28,37 @@
         </v-card>
       </v-hover>
       </div>
-    <v-card  v-else style="padding: 5rem 8rem;">
-      <div class="d-flex">
-        <v-skeleton-loader
-          type="image"
-          width="120"
-          height="90"
-          class="mr-4"
-        />
+      <div v-else >
+        <v-card  v-for="value in 4" :key="value">
+            <div class="d-flex">
+              <v-skeleton-loader
+                type="image"
+                width="120"
+                height="90"
+                class="mr-4"
+              />
 
-        <div class="flex-grow-1">
-          <v-skeleton-loader
-            type="heading"
-            width="70%"
-            class="mb-3"
-          />
+              <div class="flex-grow-1">
+                <v-skeleton-loader
+                  type="heading"
+                  width="70%"
+                  class="mb-3"
+                />
 
-          <v-skeleton-loader
-            type="text"
-            width="100%"
-            class="mb-2"
-          />
+                <v-skeleton-loader
+                  type="text"
+                  width="100%"
+                  class="mb-2"
+                />
 
-          <v-skeleton-loader
-            type="text"
-            width="40%"
-          />
-        </div>
+                <v-skeleton-loader
+                  type="text"
+                  width="40%"
+                />
+              </div>
+            </div>
+          </v-card>
       </div>
-    </v-card>
       <div class="text-center">
         <v-pagination
           v-if="pageCount > 0"
