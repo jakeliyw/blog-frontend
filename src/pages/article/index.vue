@@ -29,7 +29,7 @@
       </v-hover>
       </div>
       <div v-else >
-        <v-card  v-for="value in 4" :key="value">
+        <v-card  v-for="value in 2" :key="value" height="340">
             <div class="d-flex">
               <v-skeleton-loader
                 type="image"
