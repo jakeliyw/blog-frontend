@@ -286,7 +286,7 @@ export default {
 }
 
 .article-img {
-  width: 32rem;
+  width: 55rem;
   height: 24rem;
   margin-right: 4rem;
   background-color: #fff;
