@@ -4,12 +4,12 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _21536117 = () => interopDefault(import('..\\src\\pages\\archives\\index.vue' /* webpackChunkName: "pages/archives/index" */))
-const _c117dc94 = () => interopDefault(import('..\\src\\pages\\article\\index.vue' /* webpackChunkName: "pages/article/index" */))
-const _8b963cdc = () => interopDefault(import('..\\src\\pages\\tag\\index.vue' /* webpackChunkName: "pages/tag/index" */))
-const _5d801aa8 = () => interopDefault(import('..\\src\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
-const _1d27099e = () => interopDefault(import('..\\src\\pages\\article\\_id.vue' /* webpackChunkName: "pages/article/_id" */))
-const _535bbf0c = () => interopDefault(import('..\\src\\pages\\tag\\_id.vue' /* webpackChunkName: "pages/tag/_id" */))
+const _16232ef4 = () => interopDefault(import('..\\src\\pages\\archives\\index.vue' /* webpackChunkName: "pages/archives/index" */))
+const _53b2e067 = () => interopDefault(import('..\\src\\pages\\article\\index.vue' /* webpackChunkName: "pages/article/index" */))
+const _0440b0c3 = () => interopDefault(import('..\\src\\pages\\tag\\index.vue' /* webpackChunkName: "pages/tag/index" */))
+const _2b49d0d7 = () => interopDefault(import('..\\src\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _137bd08f = () => interopDefault(import('..\\src\\pages\\article\\_id.vue' /* webpackChunkName: "pages/article/_id" */))
+const _ca8bf02a = () => interopDefault(import('..\\src\\pages\\tag\\_id.vue' /* webpackChunkName: "pages/tag/_id" */))
 
 const emptyFn = () => {}
 
@@ -24,27 +24,27 @@ export const routerOptions = {
 
   routes: [{
     path: "/archives",
-    component: _21536117,
+    component: _16232ef4,
     name: "archives"
   }, {
     path: "/article",
-    component: _c117dc94,
+    component: _53b2e067,
     name: "article"
   }, {
     path: "/tag",
-    component: _8b963cdc,
+    component: _0440b0c3,
     name: "tag"
   }, {
     path: "/",
-    component: _5d801aa8,
+    component: _2b49d0d7,
     name: "index"
   }, {
     path: "/article/:id",
-    component: _1d27099e,
+    component: _137bd08f,
     name: "article-id"
   }, {
     path: "/tag/:id",
-    component: _535bbf0c,
+    component: _ca8bf02a,
     name: "tag-id"
   }],
 

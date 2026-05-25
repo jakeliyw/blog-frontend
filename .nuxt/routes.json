@@ -2,41 +2,41 @@
   {
     "name": "archives",
     "path": "/archives",
-    "component": "E:\\\\project\\\\testCode\\\\myblog\\\\blog-frontend\\\\src\\\\pages\\\\archives\\\\index.vue",
+    "component": "E:\\\\project\\\\testCode\\\\myblog\\\\new-blog\\\\blog-frontend\\\\src\\\\pages\\\\archives\\\\index.vue",
     "chunkName": "pages/archives/index",
     "url": "/archives"
   },
   {
     "name": "article",
     "path": "/article",
-    "component": "E:\\\\project\\\\testCode\\\\myblog\\\\blog-frontend\\\\src\\\\pages\\\\article\\\\index.vue",
+    "component": "E:\\\\project\\\\testCode\\\\myblog\\\\new-blog\\\\blog-frontend\\\\src\\\\pages\\\\article\\\\index.vue",
     "chunkName": "pages/article/index",
     "url": "/article"
   },
   {
     "name": "tag",
     "path": "/tag",
-    "component": "E:\\\\project\\\\testCode\\\\myblog\\\\blog-frontend\\\\src\\\\pages\\\\tag\\\\index.vue",
+    "component": "E:\\\\project\\\\testCode\\\\myblog\\\\new-blog\\\\blog-frontend\\\\src\\\\pages\\\\tag\\\\index.vue",
     "chunkName": "pages/tag/index",
     "url": "/tag"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "E:\\\\project\\\\testCode\\\\myblog\\\\blog-frontend\\\\src\\\\pages\\\\index.vue",
+    "component": "E:\\\\project\\\\testCode\\\\myblog\\\\new-blog\\\\blog-frontend\\\\src\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
     "url": "/"
   },
   {
     "name": "article-id",
     "path": "/article/:id",
-    "component": "E:\\\\project\\\\testCode\\\\myblog\\\\blog-frontend\\\\src\\\\pages\\\\article\\\\_id.vue",
+    "component": "E:\\\\project\\\\testCode\\\\myblog\\\\new-blog\\\\blog-frontend\\\\src\\\\pages\\\\article\\\\_id.vue",
     "chunkName": "pages/article/_id"
   },
   {
     "name": "tag-id",
     "path": "/tag/:id",
-    "component": "E:\\\\project\\\\testCode\\\\myblog\\\\blog-frontend\\\\src\\\\pages\\\\tag\\\\_id.vue",
+    "component": "E:\\\\project\\\\testCode\\\\myblog\\\\new-blog\\\\blog-frontend\\\\src\\\\pages\\\\tag\\\\_id.vue",
     "chunkName": "pages/tag/_id"
   }
 ]
