@@ -235,10 +235,11 @@ export default {
     },
   },
   mounted() {
+    if (process.client) {
+      history.scrollRestoration = 'manual';
+      window.addEventListener('beforeunload', this.saveScrollPosition);
+    }
     this.$nextTick(() => {
-      if (process.client) {
-        window.scrollTo(0, 0);
-      }
       this.ensureTOC();
       this.updateIsMobile();
       if (process.client) {
@@ -248,11 +249,18 @@ export default {
       }
     });
   },
+  beforeRouteLeave(to, from, next) {
+    if (process.client) {
+      sessionStorage.removeItem('articleScrollRestore');
+    }
+    next();
+  },
   destroyed() {
     if (process.client) {
       window.removeEventListener("scroll", this.updateOnScroll);
       window.removeEventListener("resize", this.updateHeadingOffsets);
       window.removeEventListener("resize", this.updateIsMobile);
+      window.removeEventListener("beforeunload", this.saveScrollPosition);
     }
   },
   methods: {
@@ -265,6 +273,7 @@ export default {
       }
       this.updateHeadingOffsets();
       this.enhanceCodeBlocks();
+      this.restoreScrollPosition();
     },
     generateTOC() {
       const markdownContent = document.querySelector(".v-show-content");
@@ -445,6 +454,21 @@ export default {
       });
       if (process.client) {
         window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    },
+    saveScrollPosition() {
+      if (process.client) {
+        sessionStorage.setItem('articleScrollRestore', String(window.scrollY || window.pageYOffset || 0));
+      }
+    },
+    restoreScrollPosition() {
+      if (!process.client) return;
+      const saved = sessionStorage.getItem('articleScrollRestore');
+      if (saved) {
+        sessionStorage.removeItem('articleScrollRestore');
+        window.scrollTo(0, parseInt(saved, 10));
+      } else {
+        window.scrollTo(0, 0);
       }
     },
   },
