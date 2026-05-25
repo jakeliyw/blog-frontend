@@ -136,7 +136,6 @@ import API_PREFIX from "@/utils/apiPrefix";
 
 export default {
   name: "DetailPage",
-  scrollToTop: false,
   validate({ params }) {
     const id = params && params.id ? String(params.id).trim() : "";
     return !!id;
@@ -452,15 +451,6 @@ export default {
 };
 </script>
 
-<style lang="scss" >
-// .hljs {
-//   background: #1D2429 !important;
-// }
-
-// .theme--dark.v-application code {
-//   background-color: #1D2429;
-// }
-</style>
 
 <style lang="scss" scoped>
 
