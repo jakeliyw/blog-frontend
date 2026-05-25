@@ -30,44 +30,28 @@
       </div>
       <div v-else >
         <!-- 最简修复版 -->
-       <v-card
-  v-for="value in 2"
-  :key="value"
-  class="mx-auto card skeleton-card"
-  elevation="2"
->
-  <div class="d-flex align-start skeleton-container">
-    <!-- 图片区域 -->
-    <div class="article-img-skeleton">
-      <v-skeleton-loader
-        type="image"
-        width="100%"
-        height="100%"
-      />
-    </div>
+      <v-card
+        v-for="value in 2"
+        :key="value"
+        class="responsive-card skeleton"
+        elevation="2"
+      >
+        <div class="card-grid">
+          <div class="img-area">
+            <v-skeleton-loader
+              type="image"
+              height="200"
+              class="skeleton-img"
+            />
+          </div>
 
-    <!-- 文字区域 - 确保显示 -->
-    <div class="skeleton-text-wrapper">
-      <!-- 标题 -->
-      <v-skeleton-loader
-        type="heading"
-        class="skeleton-title"
-      />
-
-      <!-- 描述文字 -->
-      <v-skeleton-loader
-        type="paragraph"
-        class="skeleton-paragraph"
-      />
-
-      <!-- 日期 -->
-      <v-skeleton-loader
-        type="text"
-        class="skeleton-date"
-      />
-    </div>
-  </div>
-</v-card>
+          <div class="content-area skeleton-content">
+            <v-skeleton-loader type="heading" class="skeleton-title" />
+            <v-skeleton-loader type="text" class="skeleton-text" />
+            <v-skeleton-loader type="text" width="40%" class="skeleton-text" />
+          </div>
+        </div>
+      </v-card>
       </div>
       <div class="text-center">
         <v-pagination
@@ -176,68 +160,121 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/* 骨架屏卡片样式 */
-.skeleton-card {
+/* 使用 Grid 实现响应式布局 */
+.responsive-card {
   margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.card-grid {
+  display: grid;
+  gap: 16px;
   padding: 16px;
 }
 
-/* 确保容器有明确的高度 */
-.skeleton-container {
-  min-height: 180px;
-  width: 100%;
+/* PC端：左图右文 */
+@media (min-width: 960px) {
+  .card-grid {
+    grid-template-columns: 300px 1fr;
+    gap: 24px;
+  }
+
+  .img-area {
+    max-width: 300px;
+  }
 }
 
-/* 图片区域 */
-.article-img-skeleton {
-  width: 32rem;
-  height: 180px; /* 设置固定高度 */
-  flex-shrink: 0;
+/* 移动端：上图下文 */
+@media (max-width: 959px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .img-area {
+    width: 100%;
+  }
+}
+
+/* 图片样式 */
+.card-img {
+  border-radius: 0.5rem;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.article-img {
   border-radius: 0.5rem;
   overflow: hidden;
-  margin-right: 16px;
 }
 
-/* 文字区域容器 - 确保有足够空间 */
-.skeleton-text-wrapper {
-  flex: 1;
-  min-width: 0; /* 防止flex子项溢出 */
+/* 内容区域 */
+.content-area {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  gap: 12px;
+  gap: 8px;
+  text-align: left;
 }
 
-/* 标题骨架屏 */
-.skeleton-title {
-  width: 100%;
+.headline {
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.desc {
+  color: #666;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.date {
+  color: #999;
+  font-size: 0.875rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* 骨架屏样式 */
+.skeleton-content {
+  gap: 12px;
 }
 
 .skeleton-title :deep(.v-skeleton-loader__heading) {
   height: 28px;
-  width: 70% !important;
-  margin: 0;
+  width: 70%;
 }
 
-/* 段落骨架屏 - 显示多行文字 */
-.skeleton-paragraph {
-  width: 100%;
-}
-
-.skeleton-paragraph :deep(.v-skeleton-loader__paragraph) {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-/* 日期骨架屏 */
-.skeleton-date {
-  width: 40%;
-}
-
-.skeleton-date :deep(.v-skeleton-loader__text) {
+.skeleton-text :deep(.v-skeleton-loader__text) {
   height: 20px;
-  width: 100% !important;
+}
+
+/* 移动端适配 */
+@media (max-width: 959px) {
+  .card-grid {
+    padding: 12px;
+  }
+
+  .headline {
+    font-size: 1rem;
+  }
+
+  .desc {
+    font-size: 0.875rem;
+  }
+
+  .skeleton-title :deep(.v-skeleton-loader__heading) {
+    height: 24px;
+  }
+
+  .skeleton-text :deep(.v-skeleton-loader__text) {
+    height: 16px;
+  }
 }
 
 
